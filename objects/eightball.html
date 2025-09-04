@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let eightBall = {
+        index: 0,
+        advice: ["yes", "no", "maybe", "not a chance"],
+        shake: function () {
+          this.index = this.index + 1;
+          if (this.index >= this.advice.length) {
+            this.index = 0;
+          }
+        },
+        look: function () {
+          return this.advice[this.index];
+        },
+      };
+
+      console.table(eightBall);
+      eightBall.shake();
+      console.table(eightBall);
+      console.log(eightBall.look());
+
+      eightBall.newFunction = function () {
+        this.index = 9;
+      };
+
+      console.table(eightBall);
+    </script>
+  </body>
+</html>

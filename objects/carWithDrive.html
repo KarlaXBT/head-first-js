@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let cadi = {
+        make: "GM",
+        model: "Cadillac",
+        year: 1955,
+        color: "tan",
+        passengers: 5,
+        convertible: false,
+        mileage: 12892,
+        started: false,
+        fuel: 0,
+        start() {
+          if (this.fuel < 1) {
+            alert("The car is on empty, fill up efore starting");
+          } else {
+            this.started = true;
+          }
+        },
+        stop() {
+          this.started = false;
+        },
+        drive() {
+          if (this.fuel > 0) {
+            if (this.started) {
+              this.fuel = this.fuel - 1;
+              alert(this.make + " " + this.model + " goes zoom zoom!");
+            } else {
+              alert("You need to start the engine first.");
+            }
+          } else {
+            alert("Fuel tank is empty");
+          }
+        },
+        addFuel(amount) {
+          this.fuel = this.fuel + amount;
+        },
+      };
+
+      let chevy = {
+        make: "Chevy",
+        model: "Bel Air",
+        year: 1957,
+        color: "red",
+        passengers: 2,
+        convertible: false,
+        mileage: 1021,
+        started: false,
+        start() {
+          this.started = true;
+        },
+        stop() {
+          this.started = false;
+        },
+        drive() {
+          if (this.fuel > 0) {
+            if (this.started) {
+              alert(this.make + " " + this.model + " goes zoom zoom!");
+            } else {
+              alert("You need to start the engine first.");
+            }
+          } else {
+            console.log("Fuel tank is empty");
+          }
+        },
+      };
+
+      let taxi = {
+        make: "Webville Motors",
+        model: "Taxi",
+        year: 1955,
+        color: "yellow",
+        passengers: 4,
+        convertible: false,
+        mileage: 281341,
+        started: false,
+        start() {
+          this.started = true;
+        },
+        stop() {
+          this.started = false;
+        },
+        drive() {
+          if (this.fuel > 0) {
+            if (this.started) {
+              alert(this.make + " " + this.model + " goes zoom zoom!");
+            } else {
+              alert("You need to start the engine first.");
+            }
+          } else {
+            console.log("Fuel tank is empty");
+          }
+        },
+      };
+      cadi.addFuel(2);
+      cadi.start();
+      cadi.drive();
+      cadi.drive();
+      cadi.drive();
+      // cadi.drive();
+      // cadi.drive();
+      // cadi.drive();
+
+      // cadi.stop();
+      // chevy.start();
+      // chevy.drive();
+      // chevy.stop();
+      // taxi.start();
+      // taxi.drive();
+      // taxi.stop();
+
+      for (let prop in chevy) {
+        console.log(prop + ": " + chevy[prop]);
+      }
+    </script>
+  </body>
+</html>

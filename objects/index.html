@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let chevy = {
+        make: "Chevy",
+        model: "Bel Air",
+        year: 1957,
+        color: "red",
+        passengers: 2,
+        convertible: false,
+        mileage: 1021,
+      };
+
+      let cadi = {
+        make: "Caddilac",
+        model: "GM Caddilac",
+        year: 1955,
+        color: "tan",
+        passengers: 5,
+        convertible: false,
+        mileage: 12892,
+      };
+
+      let fiat = {
+        make: "Fiat",
+        model: "500",
+        year: 1957,
+        color: "Medium Blue",
+        passengers: 2,
+        convertible: false,
+        mileage: 8800,
+      };
+      console.log(chevy, cadi, fiat);
+
+      console.log(chevy.year);
+      fiat.mileage = 10000;
+      console.log(fiat.mileage);
+      fiat.needsWashing = true;
+
+      let fido = {
+        name: "Fido",
+        weight: 20.2,
+        age: 4,
+        breed: "mixed",
+        activity: "fetch balls",
+      };
+
+      let bark;
+      if (fido.weight > 20) {
+        bark = "WOOF WOOF";
+      } else {
+        bark = "woof woof";
+      }
+
+      let speak =
+        fido.name + " says " + bark + " when he wants to " + fido.activity;
+      console.log(speak);
+      console.table(fiat);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubblegum</title>
+  </head>
+  <body>
+    <script>
+      let scores = [
+        60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 48, 69, 34, 55, 51, 52, 44, 51,
+        69, 64, 66, 55, 52, 61, 46, 31, 57, 52, 44, 18, 41, 53, 55, 61, 51, 44,
+      ];
+      let costs = [
+        0.25, 0.27, 0.25, 0.25, 0.25, 0.25, 0.33, 0.31, 0.25, 0.29, 0.27, 0.22,
+        0.31, 0.25, 0.25, 0.33, 0.21, 0.25, 0.25, 0.25, 0.28, 0.25, 0.24, 0.22,
+        0.2, 0.25, 0.3, 0.25, 0.24, 0.25, 0.25, 0.25, 0.27, 0.25, 0.26, 0.29,
+      ];
+
+      // Funktsioon, mis prindib kõik skoorid ja leiab kõrgeima skoori
+      function printAndGetHighScore(scores) {
+        let highScore = 0;
+        for (let i = 0; i < scores.length; i++) {
+          console.log("Bubble solution #" + i + " score: " + scores[i]);
+          if (scores[i] > highScore) {
+            highScore = scores[i];
+          }
+        }
+        return highScore;
+      }
+
+      // Funktsioon, mis leiab kõigi kõrgeima skooriga lahenduste indeksid
+      function highestScore(scores, highScore) {
+        let bestSolutions = [];
+        for (let i = 0; i < scores.length; i++) {
+          if (scores[i] === highScore) {
+            bestSolutions.push(i);
+          }
+        }
+        return bestSolutions;
+      }
+
+      // Funktsioon mis leiab kõige parema hinnaga mullisegu
+      function getMostCostEffectiveSolution(scores, costs, highScore) {
+        let cost = 100;
+        let index;
+        for (let i = 0; i < scores.length; i++) {
+          if (scores[i] == highScore) {
+            if (cost > costs[i]) {
+              index = i;
+              cost = costs[i];
+            }
+          }
+        }
+        return index;
+      }
+
+      // Peamine kood
+      let highScore = printAndGetHighScore(scores);
+      let bestSolutions = highestScore(scores, highScore);
+      let mostCostEffective = getMostCostEffectiveSolution(
+        scores,
+        costs,
+        highScore
+      );
+
+      console.log("Bubbles tests: " + scores.length);
+      console.log("Highest bubble score: " + highScore);
+      console.log("Solutions with the highest score: " + bestSolutions);
+      console.log(
+        "Bubble Solution #" + mostCostEffective + " is the most cost effective"
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let taxi = {
+        make: "Webville",
+        model: "Taxi",
+        year: 1955,
+        color: "Yellow",
+        passengers: 4,
+        convertible: false,
+        mileage: 28132,
+      };
+
+      function prequal(car) {
+        if (car.mileage > 10000) {
+          return false;
+        } else if (car.age > 1960) {
+          return false;
+        }
+        return true;
+      }
+
+      let worthALook = prequal(taxi);
+
+      console.log(worthALook);
+
+      if (worthALook) {
+        console.log("You gotta check out this " + taxi.make + " " + taxi.model);
+      } else {
+        console.log(
+          "You should really pass on the " + taxi.make + " " + taxi.model
+        );
+      }
+
+      let superSecretFile = {
+        level: "classified",
+        opened: 0,
+        password: 2,
+        contents: "Dr. Evel's next meeting is in Detroit",
+      };
+
+      function getSecret(file, secretPassword) {
+        file.opened += 1;
+        if (secretPassword == file.password) {
+          return file.contents;
+        } else {
+          return "Invalid password! No secret for you";
+        }
+      }
+
+      let secret = getSecret(superSecretFile, 2);
+      console.log(secret);
+
+      function setSecret(file, secretPassword, secret) {
+        if (secretPassword == file.password) {
+          file.opened = 0;
+          file.contents = secret;
+        }
+      }
+
+      setSecret(
+        superSecretFile,
+        2,
+        "Dr. Evel's next meeting is in Philadelphia."
+      );
+      secret = getSecret(superSecretFile, 2);
+      console.log(secret);
+    </script>
+  </body>
+</html>
