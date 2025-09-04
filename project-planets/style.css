@@ -1,0 +1,9 @@
+.highlight {
+  font-weight: bold;
+  font-size: 30px;
+  color: red;
+}
+
+li:hover {
+  cursor: pointer;
+}
